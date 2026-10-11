@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    background-color: #eeeeee;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.site-header {
+    background-color: #dddddd;
+}
+
+.site-title {
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.site-nav {
+    margin-top: 10px;
+}
+
+.site-nav a {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 5px 0;
+}
+
+.site-nav a[aria-current="page"] {
+    font-weight: bold;
+}
+
+a { color: #175c9c; }
+a:hover { color: #a33320; }
+
+main { background-color: white; }
+h1 { font-size: 28px; }
+h2 { font-size: 22px; }
+h3 { font-size: 18px; }
+
+.section, .page-heading, .next-page {
+    margin-bottom: 25px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.example-image {
+    width: 240px;
+    margin: 20px 0;
+}
+
+figcaption, .small-note {
+    color: #555555;
+    font-size: 14px;
+}
+
+.legend, .pull-note {
+    background-color: #f3f3f3;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    margin: 15px 0;
+}
+
+.chord-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.chord-grid figure {
+    width: 260px;
+    max-width: 100%;
+    margin: 0 0 15px;
+}
+
+.table-scroll { overflow-x: auto; }
+
+#chord-table {
+    width: 100%;
+    min-width: 540px;
+    border-collapse: collapse;
+}
+
+caption {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 1px solid #aaaaaa;
+    padding: 8px;
+    text-align: left;
+}
+
+thead { background-color: #dddddd; }
+tbody th { font-weight: normal; }
+.right { text-align: right; }
+.center { text-align: center; }
+
+.beat-grid {
+    display: flex;
+    border: 1px solid #cccccc;
+    margin: 20px 0;
+}
+
+.beat-grid div {
+    flex: 1;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.beat-grid span { display: block; }
+.beat-grid strong { font-size: 28px; }
+
+.progression {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.progression span { margin-right: 20px; }
+.steps { padding-left: 25px; }
+.steps li { margin-bottom: 25px; }
+.sources a { display: block; margin-bottom: 10px; }
+
+.site-footer {
+    background-color: #dddddd;
+    color: #555555;
+    font-size: 14px;
+}
+
+.site-footer p { margin: 5px 0; }
+
+@media (max-width: 600px) {
+    .container { padding: 15px; }
+    .site-nav a { margin-right: 10px; }
+    .chord-grid { justify-content: center; }
+}
