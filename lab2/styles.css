@@ -1,0 +1,174 @@
+:root {
+    --paper: #f3f1e9;
+    --ink: #22221e;
+    --muted: #66665c;
+    --line: #cfcec3;
+    --accent: #aa3327;
+    --white: #fffdf8;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+}
+a { color: inherit; text-underline-offset: 5px; }
+a:hover { color: var(--accent); }
+a:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 5px;
+}
+img { display: block; max-width: 100%; height: auto; }
+figure { margin: 0; }
+p { margin: 0 0 1.2em; }
+h1, h2, h3 { margin: 0; font-weight: normal; }
+h1, h2, h3 { font-family: Georgia, serif; }
+h1 { font-size: clamp(44px, 6vw, 80px); line-height: 1.08; letter-spacing: -0.04em; }
+h2 { font-size: clamp(28px, 3vw, 40px); line-height: 1.2; }
+h3 { font-size: 27px; line-height: 1.25; }
+::selection { background: var(--accent); color: var(--white); }
+.container { width: min(1160px, calc(100% - 80px)); margin-inline: auto; }
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    padding: 10px 18px;
+    background: var(--white);
+    z-index: 2;
+}
+.skip-link:focus { top: 10px; }
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding-block: 24px;
+    border-bottom: 1px solid var(--ink);
+}
+.brand { display: flex; align-items: baseline; gap: 14px; text-decoration: none; }
+.brand strong { font-size: 36px; letter-spacing: -3px; line-height: 1; }
+.brand span { font: 12px 'Courier New', monospace; color: var(--muted); }
+.site-nav { display: flex; flex-wrap: wrap; gap: 28px; }
+.site-nav a { padding-block: 8px; font-size: 12px; text-decoration: none; }
+.site-nav a[aria-current="page"] { color: var(--accent); border-bottom: 2px solid var(--accent); }
+.eyebrow { font: 11px/1.5 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); }
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding-block: 52px;
+}
+.hero h1 { margin: 24px 0; }
+.hero h1 em { color: var(--accent); font-weight: normal; }
+.hero .intro { max-width: 370px; }
+.intro { color: var(--muted); font-size: 15px; }
+.text-link { display: inline-block; margin-top: 12px; font-size: 12px; font-weight: bold; }
+.hero-photo img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; }
+figcaption { padding-top: 10px; color: var(--muted); font: 11px/1.6 'Courier New', monospace; }
+.section { padding-block: 40px 52px; border-top: 1px solid var(--ink); }
+.section-heading { display: flex; justify-content: space-between; gap: 24px; align-items: baseline; margin-bottom: 30px; }
+.section-heading .eyebrow { color: var(--muted); }
+.contents { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+.contents article { border-top: 1px solid var(--line); padding-top: 18px; }
+.contents h3 { margin: 18px 0 12px; }
+.contents p { color: var(--muted); }
+.number { color: var(--accent); font: 12px 'Courier New', monospace; }
+.pull-note { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding-block: 30px; border-top: 1px solid var(--line); }
+.pull-note p { max-width: 680px; margin: 0; }
+.page-heading { max-width: 780px; padding-block: 48px 42px; }
+.page-heading h1 { margin: 20px 0; }
+.page-heading .intro { max-width: 650px; }
+.small-note { color: var(--muted); font-size: 12px; }
+.reading { max-width: 780px; }
+.reading h2 { margin-bottom: 18px; }
+.reading ul { padding-left: 22px; }
+.reading li { margin-bottom: 10px; }
+.table-scroll { overflow-x: auto; margin-block: 30px 18px; }
+#chord-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+caption { padding-bottom: 18px; text-align: left; font-family: Georgia, serif; font-size: 26px; }
+th, td { padding: 18px 20px; border-bottom: 1px solid var(--line); }
+thead th { background: var(--ink); color: var(--white); font: 11px 'Courier New', monospace; letter-spacing: 0.04em; }
+tbody th { font-weight: normal; }
+tbody tr:nth-child(even) { background: var(--white); }
+/* Названия слева, количество струн справа, тип и аппликатура по центру. */
+#chord-table th:first-child, #chord-table td:first-child { text-align: left; }
+#chord-table th:nth-child(2), #chord-table td:nth-child(2) { text-align: right; font-variant-numeric: tabular-nums; }
+#chord-table th:nth-child(3), #chord-table td:nth-child(3),
+#chord-table th:nth-child(4), #chord-table td:nth-child(4) { text-align: center; }
+.steps { list-style: none; margin: 0; padding: 0; }
+.steps li { display: grid; grid-template-columns: 70px 1fr; gap: 24px; padding-block: 28px; border-top: 1px solid var(--line); }
+.steps h2 { font-size: 30px; margin-bottom: 16px; }
+.steps p { max-width: 680px; }
+.steps .number { padding-top: 7px; }
+.notice { border-left: 3px solid var(--accent); padding: 18px 24px; background: var(--white); }
+.notice p:last-child { margin: 0; }
+details { border-bottom: 1px solid var(--line); padding-block: 18px; }
+summary { cursor: pointer; font-size: 14px; font-weight: bold; }
+details p { margin: 18px 0 0; color: var(--muted); }
+.sources { margin-top: 28px; }
+.sources a { display: inline-block; margin: 0 24px 10px 0; font-size: 12px; }
+.next-page { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 30px; border-top: 1px solid var(--ink); }
+.next-page p { margin: 0; color: var(--muted); font-size: 12px; }
+.next-page a { font-family: Georgia, serif; font-size: 28px; }
+.site-footer { display: flex; justify-content: space-between; gap: 24px; padding-block: 24px; border-top: 1px solid var(--ink); color: var(--muted); font: 11px/1.7 'Courier New', monospace; }
+.site-footer p { margin: 0; }
+@media (max-width: 900px) {
+    .container { width: calc(100% - 48px); }
+    .hero { gap: 30px; }
+    .site-nav { gap: 18px; }
+    .contents { gap: 24px; }
+}
+@media (max-width: 640px) {
+    .container { width: calc(100% - 36px); }
+    .site-header { align-items: flex-start; flex-direction: column; gap: 18px; padding-block: 20px; }
+    .site-nav { width: 100%; justify-content: space-between; gap: 8px; }
+    .hero, .contents, .pull-note { grid-template-columns: 1fr; }
+    .hero { padding-block: 32px; gap: 32px; }
+    .hero .intro { max-width: none; }
+    .page-heading { padding-block: 32px; }
+    .section { padding-block: 30px 36px; }
+    .section-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
+    .contents { gap: 30px; }
+    .pull-note { gap: 18px; }
+    .steps li { grid-template-columns: 32px 1fr; gap: 14px; }
+    th, td { padding: 15px 12px; }
+    #chord-table { min-width: 560px; }
+    .next-page, .site-footer { align-items: flex-start; flex-direction: column; gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+
+/* Схемы аккордов и наглядная запись ритма. */
+.legend { display: flex; flex-wrap: wrap; gap: 14px 30px; padding-block: 20px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+.legend p { margin: 0; }
+.legend strong { color: var(--accent); }
+.chord-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 28px; }
+.chord-grid img { width: 100%; }
+.chord-grid figcaption { font-family: Verdana, sans-serif; line-height: 1.8; }
+.chord-grid figcaption strong { color: var(--ink); font-size: 13px; }
+.beat-grid { display: grid; margin-block: 30px 18px; border: 1px solid var(--line); background: var(--white); }
+.quarters { grid-template-columns: repeat(4, 1fr); }
+.eighths { grid-template-columns: repeat(8, 1fr); }
+.beat-grid div { padding: 20px 8px; text-align: center; border-right: 1px solid var(--line); }
+.beat-grid div:last-child { border-right: 0; }
+.beat-grid span { display: block; font: 15px monospace; color: var(--muted); }
+.beat-grid strong { display: block; font-size: 44px; font-weight: normal; color: var(--accent); }
+.progression { display: flex; flex-wrap: wrap; margin-block: 24px; }
+.progression span { padding: 12px 28px; border-left: 1px solid var(--line); font: 34px Georgia, serif; }
+.progression span:last-child { border-right: 1px solid var(--line); }
+@media (max-width: 900px) { .chord-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) {
+    .hero h1 { font-size: clamp(46px, 12vw, 60px); }
+    .hero-photo img { aspect-ratio: 1 / 1; }
+    .chord-grid { grid-template-columns: 1fr; }
+    .beat-grid strong { font-size: 30px; }
+    .beat-grid div { padding: 16px 0; }
+    .progression span { padding: 10px 18px; font-size: 28px; }
+}
