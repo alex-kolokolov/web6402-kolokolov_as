@@ -1,0 +1,361 @@
+/* Все цвета сайта задаются здесь. В правилах используйте var(...). */
+:root {
+    --color-page: #eeeeee;
+    --color-surface: #ffffff;
+    --color-band: #dddddd;
+    --color-note: #f3f3f3;
+    --color-text: #333333;
+    --color-text-muted: #555555;
+    --color-accent: #175c9c;
+    --color-link-hover: #a33320;
+    --color-border: #cccccc;
+    --color-table-border: #aaaaaa;
+    --color-control-border: #777777;
+    --color-on-accent: var(--color-surface);
+}
+
+.page {
+    margin: 0;
+    background-color: var(--color-page);
+    color: var(--color-text);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.page__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.site-header {
+    background-color: var(--color-band);
+}
+
+.site-header__title {
+    color: var(--color-text);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.site-nav {
+    margin-top: 10px;
+}
+
+.site-nav__link {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 5px 0;
+}
+
+.site-nav__link[aria-current="page"] {
+    font-weight: bold;
+}
+
+a { color: var(--color-accent); }
+a:hover { color: var(--color-link-hover); }
+
+main { background-color: var(--color-surface); }
+h1 { font-size: 28px; }
+h2 { font-size: 22px; }
+h3 { font-size: 18px; }
+
+.page__section, .page__heading, .page__next {
+    margin-bottom: 25px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.home__title { margin: 0 0 8px; }
+.home__text { margin: 0 0 8px; }
+
+.home__intro {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+.home__explanation { flex: 1; }
+
+.home__example {
+    width: min(100%, 220px);
+    margin: 0;
+    text-align: center;
+}
+
+.home__sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.home__section-item {
+    flex: 1 1 180px;
+    padding: 14px;
+    background-color: var(--color-note);
+    border-radius: 6px;
+}
+
+.home__caption, .chord-card__caption, .page__note {
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+.chord-guide__legend {
+    background-color: var(--color-note);
+    border: 1px solid var(--color-border);
+    padding: 10px;
+    margin: 0;
+}
+
+.chord-guide {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 24px;
+}
+
+.chord-guide__title { margin-top: 0; }
+
+.chord-guide__section, .chord-guide__next {
+    grid-column: 1 / -1;
+    min-width: 0;
+    margin: 0;
+}
+
+.chord-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.chord-card {
+    margin: 0;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.chord-card__image { display: block; width: min(100%, 220px); margin: 0 auto; }
+
+.chord-guide__table-scroll { overflow-x: auto; }
+
+.chord-table {
+    width: 100%;
+    min-width: 540px;
+    border-collapse: collapse;
+}
+
+.chord-table__caption {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.chord-table__cell {
+    border: 1px solid var(--color-table-border);
+    padding: 8px;
+    text-align: left;
+}
+
+.chord-table__head { background-color: var(--color-band); }
+.chord-table__cell--row-heading { font-weight: normal; }
+.chord-table__cell--right { text-align: right; }
+.chord-table__cell--center { text-align: center; }
+
+.beat-player__control {
+    cursor: pointer;
+    accent-color: var(--color-accent);
+}
+
+.beat-grid {
+    --beat-count: 4;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    margin: 20px 0;
+}
+
+.beat-grid--eighths { --beat-count: 8; }
+
+.beat-player__control:has(:checked) + .beat-grid::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: calc(100% / var(--beat-count));
+    background-color: var(--color-band);
+    box-shadow: inset 0 -3px var(--color-accent);
+    animation: strumming-count 4s steps(var(--beat-count), end) infinite;
+}
+
+@keyframes strumming-count {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(100% * var(--beat-count))); }
+}
+
+.beat-grid__beat {
+    position: relative;
+    flex: 1;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.beat-grid__count { display: block; }
+.beat-grid__stroke { font-size: 28px; }
+
+.progression {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.progression__chord { margin-right: 20px; }
+.practice-steps { padding-left: 25px; }
+.practice-steps__item { margin-bottom: 25px; }
+.sources__link { display: block; margin-bottom: 10px; }
+
+.site-footer {
+    background-color: var(--color-band);
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+.site-footer__text { margin: 5px 0; }
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 26rem;
+}
+
+.auth-form__mode {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+}
+
+.auth-form__switch {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    isolation: isolate;
+    margin-top: 4px;
+    padding: 3px;
+    border-radius: 8px;
+    background-color: var(--color-band);
+}
+
+.auth-form__option:has(:checked)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 6px;
+    background-color: var(--color-surface);
+    box-shadow: inset 0 -2px var(--color-accent);
+}
+
+@keyframes mode-slide {
+    from { transform: translateX(var(--slide-from)); }
+    to { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .auth-form__switch--animated .auth-form__option:has(:checked)::before {
+        animation: mode-slide 240ms ease-in-out;
+    }
+}
+
+.auth-form__option {
+    --slide-from: 100%;
+    position: relative;
+    padding: 8px 0;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.auth-form__option:has([value="register"]) { --slide-from: -100%; }
+
+.auth-form__radio {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.auth-form__option:has(:checked) { font-weight: bold; }
+.auth-form__option:has(:focus-visible) { outline: 2px solid var(--color-accent); }
+
+.auth-form__extra {
+    min-width: 0;
+    margin: 0;
+    padding: 12px 16px;
+    border: 1px solid var(--color-control-border);
+    border-radius: 6px;
+}
+
+.auth-form__field--extra { margin-bottom: 12px; }
+
+.auth-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.auth-form__control {
+    min-width: 0;
+    padding: 8px;
+    font: inherit;
+    border: 1px solid var(--color-control-border);
+    border-radius: 4px;
+}
+
+.auth-form__submit {
+    align-self: flex-start;
+    padding: 8px 18px;
+    border: 0;
+    border-radius: 4px;
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+    font: inherit;
+    cursor: pointer;
+}
+
+@media (max-width: 740px) {
+    .chord-guide { grid-template-columns: minmax(0, 1fr); }
+    .chord-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+    .page__container { padding: 15px; }
+    .site-nav__link { margin-right: 10px; }
+    .home__intro { flex-direction: column; }
+    .home__sections { flex-direction: column; }
+    .home__section-item { flex: auto; }
+}
+
+@media (max-width: 480px) {
+    .chord-grid { grid-template-columns: minmax(0, 1fr); }
+}

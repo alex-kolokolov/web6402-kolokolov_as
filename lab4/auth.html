@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="form-action 'none'">
+    <title>Вход и регистрация — Гитарные аккорды</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="auth.js" defer></script>
+</head>
+<body class="page">
+    <header class="site-header page__container">
+        <a class="site-header__title" href="index.html">Гитарные аккорды</a>
+        <nav class="site-nav" aria-label="Основная навигация">
+            <a class="site-nav__link" href="index.html">Главная</a>
+            <a class="site-nav__link" href="chords.html">Аккорды</a>
+            <a class="site-nav__link" href="rhythm.html">Ритм</a>
+            <a class="site-nav__link" href="practice.html">Практика</a>
+            <a class="site-nav__link" href="auth.html" aria-current="page">Вход / Регистрация</a>
+        </nav>
+    </header>
+    <main class="page__container">
+        <h1>Вход и регистрация</h1>
+        <form class="auth-form" id="auth-form">
+            <fieldset class="auth-form__mode">
+                <legend>Выберите действие</legend>
+                <div class="auth-form__switch">
+                    <label class="auth-form__option"><input class="auth-form__radio" type="radio" name="mode" value="login" checked>Вход</label>
+                    <label class="auth-form__option"><input class="auth-form__radio" type="radio" name="mode" value="register">Регистрация</label>
+                </div>
+            </fieldset>
+            <label class="auth-form__field">Логин
+                <input class="auth-form__control" type="text" name="login" autocomplete="username" pattern=".*\S.*" required>
+            </label>
+            <label class="auth-form__field">Пароль
+                <input class="auth-form__control" type="password" name="password" autocomplete="current-password" required>
+            </label>
+            <fieldset class="auth-form__extra" hidden disabled>
+                <legend>Данные для регистрации</legend>
+                <label class="auth-form__field auth-form__field--extra">Электронная почта
+                    <input class="auth-form__control" type="email" name="email" autocomplete="email"
+                        pattern="[^@]+@[^@]+\.[^@.]+" title="Введите адрес с точкой в домене, например alex@example.ru" required>
+                </label>
+                <label class="auth-form__field auth-form__field--extra">Уровень игры на гитаре
+                    <select class="auth-form__control" name="level" required>
+                        <option value="">Выберите уровень</option>
+                        <option>Начинающий</option>
+                        <option>Средний</option>
+                        <option>Опытный</option>
+                    </select>
+                </label>
+                <label><input type="checkbox" name="consent" required> Даю согласие на обработку данных</label>
+            </fieldset>
+            <button class="auth-form__submit" type="submit">Войти</button>
+            <output class="auth-form__status"></output>
+        </form>
+    </main>
+    <footer class="site-footer page__container"><p class="site-footer__text">Гитарные аккорды — лабораторная работа №4</p><p class="site-footer__text">Колоколов Александр · 6402 · 2026</p></footer>
+</body>
+</html>
