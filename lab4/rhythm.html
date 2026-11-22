@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Два простых рисунка гитарного боя в размере 4/4: четверти и восьмые.">
+    <title>Ритм и бой</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+    <header class="site-header page__container">
+        <a class="site-header__title" href="index.html">Гитарные аккорды</a>
+        <nav class="site-nav" aria-label="Основная навигация">
+            <a class="site-nav__link" href="index.html">Главная</a>
+            <a class="site-nav__link" href="chords.html">Аккорды</a>
+            <a class="site-nav__link" href="rhythm.html" aria-current="page">Ритм</a>
+            <a class="site-nav__link" href="practice.html">Практика</a>
+            <a class="site-nav__link" href="auth.html">Вход / Регистрация</a>
+        </nav>
+    </header>
+    <main id="main" class="page__container">
+        <div class="page__heading"><h1>Считаем до четырёх</h1><p>Возьмите Em и пока не меняйте аккорд. Сначала найдите ровный пульс, затем добавьте движение правой руки.</p></div>
+        <section class="page__section beat-player" aria-labelledby="quarter-title">
+            <h2 id="quarter-title">Один удар на долю</h2>
+            <p>Считайте вслух: «раз, два, три, четыре». На каждое число делайте один удар вниз. После четвёртой доли начинается следующий такт.</p>
+            <label class="beat-player__control"><input type="checkbox" aria-controls="quarter-pattern"> Повторять четверти · 60 уд/мин</label>
+            <div class="beat-grid" id="quarter-pattern" role="img" aria-label="На счёт 1, 2, 3, 4 — по одному удару вниз">
+                <div class="beat-grid__beat"><span class="beat-grid__count">1</span><strong class="beat-grid__stroke">↓</strong></div>
+                <div class="beat-grid__beat"><span class="beat-grid__count">2</span><strong class="beat-grid__stroke">↓</strong></div>
+                <div class="beat-grid__beat"><span class="beat-grid__count">3</span><strong class="beat-grid__stroke">↓</strong></div>
+                <div class="beat-grid__beat"><span class="beat-grid__count">4</span><strong class="beat-grid__stroke">↓</strong></div>
+            </div>
+            <p class="page__note">↓ — удар от толстых струн к тонким. Чтобы играть вместе с подсветкой, поставьте метроном на 60 ударов в минуту. Один щелчок соответствует одной доле.</p>
+        </section>
+        <section class="page__section beat-player" aria-labelledby="eighth-title">
+            <h2 id="eighth-title">Вниз и вверх</h2>
+            <p>Теперь считайте «раз-и, два-и, три-и, четыре-и». На число рука идёт вниз, на «и» — вверх. Между соседними движениями оставляйте одинаковое время.</p>
+            <label class="beat-player__control"><input type="checkbox" aria-controls="eighth-pattern"> Повторять восьмые · 60 уд/мин</label>
+            <div class="beat-grid beat-grid--eighths" id="eighth-pattern" role="img" aria-label="1 вниз, и вверх, 2 вниз, и вверх, 3 вниз, и вверх, 4 вниз, и вверх">
+                <div class="beat-grid__beat"><span class="beat-grid__count">1</span><strong class="beat-grid__stroke">↓</strong></div>
+                <div class="beat-grid__beat"><span class="beat-grid__count">и</span><strong class="beat-grid__stroke">↑</strong></div>
+                <div class="beat-grid__beat"><span class="beat-grid__count">2</span><strong class="beat-grid__stroke">↓</strong></div>
+                <div class="beat-grid__beat"><span class="beat-grid__count">и</span><strong class="beat-grid__stroke">↑</strong></div>
+                <div class="beat-grid__beat"><span class="beat-grid__count">3</span><strong class="beat-grid__stroke">↓</strong></div>
+                <div class="beat-grid__beat"><span class="beat-grid__count">и</span><strong class="beat-grid__stroke">↑</strong></div>
+                <div class="beat-grid__beat"><span class="beat-grid__count">4</span><strong class="beat-grid__stroke">↓</strong></div>
+                <div class="beat-grid__beat"><span class="beat-grid__count">и</span><strong class="beat-grid__stroke">↑</strong></div>
+            </div>
+            <p class="page__note">↑ — движение от тонких струн к толстым. При движении вверх достаточно задеть несколько тонких струн.</p>
+        </section>
+        <div class="page__next"><a href="practice.html">Упражнения</a></div>
+    </main>
+    <footer class="site-footer page__container"><p class="site-footer__text">Гитарные аккорды — лабораторная работа №2</p><p class="site-footer__text">Колоколов Александр · 6402 · 2026</p></footer>
+</body>
+</html>
